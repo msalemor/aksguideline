@@ -45,6 +45,7 @@ A guide to best practices for Docker, AKS, and other Azure Services
 - Provision the cluster with the Azure CLI as it provides more configuration options
 - Enable autoscaling of nodes
 - Deploy dev/test and prod to different clusters
+- Leverage namespaces to deploy to different environments
 
 ### Scalability and bursting
 
