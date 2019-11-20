@@ -46,6 +46,7 @@ A guide to best practices for Docker, AKS, and other Azure Services
 - Enable autoscaling of nodes
 - Deploy dev/test and prod to different clusters
 - Leverage namespaces to deploy to different environments
+  - Link them to groups in AD. This will prevent users from managing (adding, removing, etc.) workloads to different namespaces, but still does not prevent communication between services in the cluster.
 
 ### Scalability and bursting
 
@@ -84,7 +85,7 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 - Azure Monitor for containers
   - https://docs.microsoft.com/en-us/azure/azure-monitor/insights/container-insights-analyze
-  - Logging to STOUT
+  - Logging to STDOUT
 - Application Insights
 
 ### Other
