@@ -63,11 +63,20 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 - Patch the nodes
   - Kured: used for nodes requiring reboot 
+- Azure AD integration
+  - https://docs.microsoft.com/en-us/azure/aks/azure-ad-integration
 
 ### Resource Limits
 
 - Set resource limits on PODs
   - k8s will deprevision PODs without resource limits first
+
+### Monitor
+
+- Azure Monitor for containers
+  - https://docs.microsoft.com/en-us/azure/azure-monitor/insights/container-insights-analyze
+  - Logging to STOUT
+- Application Insights
 
 ### Other
 
