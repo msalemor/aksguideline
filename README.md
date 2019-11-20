@@ -17,6 +17,7 @@ A guide to best practices for Docker, AKS, and other Azure Services
 - Implement Liveness and Readiness probes
 - Enable Cluster and App Monitoring
 - Transient Fault Handling (retries with exponential backoff and resilient HTTP requests)
+- https://docs.microsoft.com/en-us/dotnet/architecture/microservices/ (Page 53)
 
 ### 12 Factor
 
