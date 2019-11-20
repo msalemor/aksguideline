@@ -6,7 +6,11 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 ### API Management pattern
 
+- https://docs.microsoft.com/en-us/dotnet/architecture/microservices/ (Page 42)
+
 ### Async vs Sync patterns
+
+- https://docs.microsoft.com/en-us/dotnet/architecture/microservices/ (Page 53)
 
 ### Resiliency
 
@@ -77,10 +81,12 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 ### Application Gateway as Ingress Controller
 
+- https://github.com/Azure/application-gateway-kubernetes-ingress
+
 ### Azure Container Registry
 
 - Use it to store the images
-  - The premium sku provides ability to have global copies and thus can be used on ASK cluster on different regions
+  - The premium sku provides ability to have global replication of the images and thus images can be used on ASK cluster on different regions
 
 ### Azure Key Vault
 
