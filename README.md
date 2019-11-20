@@ -103,8 +103,11 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 ### Azure Container Registry
 
-- Use it to store the images
-  - The premium sku provides ability to have global replication of the images and thus images can be used on ASK cluster on different regions
+- Use it to store and retrieve the docker images
+  - The premium sku:
+    - Provides ability to have global replication of the images and thus images can be used on AKS cluster on different regions
+    - Lock down ACR to VNet to the cluster that will consume it
+    - Sign the images, and only signed images can be used on the cluster
 
 ### Azure Key Vault
 
