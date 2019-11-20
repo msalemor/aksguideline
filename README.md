@@ -10,7 +10,12 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 ### Resiliency
 
+- Monitoring
+- Transient Fault Handling
+
 ### 12 Factor
+
+- https://12factor.net/
 
 ### Resources
 
