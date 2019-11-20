@@ -10,8 +10,9 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 ### Resiliency
 
-- Monitoring
-- Transient Fault Handling
+- Implement Liveness and Readiness probes
+- Enable Cluster and App Monitoring
+- Transient Fault Handling (retries with exponential backoff and resilient HTTP requests)
 
 ### 12 Factor
 
@@ -32,10 +33,11 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 ## AKS
 
-### Provisioning
+### Provisioning and deploymnet
 
 - Provision the cluster with the Azure CLI as it provides more configuration options
 - Enable autoscaling of nodes
+- Deploy dev/test and prod to different clusters
 
 ### Scalability and bursting
 
@@ -56,11 +58,16 @@ A guide to best practices for Docker, AKS, and other Azure Services
 ### Security
 
 - Patch the nodes
+  - Kured: used for nodes requiring reboot 
 
 ### Resource Limits
 
 - Set resource limits on PODs
   - k8s will deprevision PODs without resource limits first
+
+### Other
+
+- Watch-out for Issues with Upstream features 
 
 ### Resources
 
@@ -68,7 +75,14 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 ## Other Azure Services
 
+### Application Gateway as Ingress Controller
+
 ### Azure Container Registry
 
-### Azure
+- Use it to store the images
+  - The premium sku provides ability to have global copies and thus can be used on ASK cluster on different regions
+
+### Azure Key Vault
+
+- Use it to store and retrieve secrets
 
