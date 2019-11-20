@@ -112,4 +112,6 @@ A guide to best practices for Docker, AKS, and other Azure Services
 ### Azure Key Vault
 
 - Use it to store and retrieve secrets
+  - 12 Factor inject secrets as environment variables
+  - Get secrets at runtime (more secure)
 
