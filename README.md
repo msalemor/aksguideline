@@ -36,6 +36,7 @@ A guide to best practices for Docker, AKS, and other Azure Services
 - Update the base images regularly
 - Don't run all processes as root
 - Use container registry services to scan for vulnerabilities
+  - Acqua or Twistlock
 
 ## AKS
 
