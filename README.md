@@ -59,6 +59,10 @@ A guide to best practices for Docker, AKS, and other Azure Services
   - CNI: Recommended. Requires more network planning and IP allocation, and provides ability for inboud communication into the nodes
 - Use NGS to restrict communication from outside the cluster, use network policies to restrict communication inside the cluster
   - Note: namespaces do not provide service isolation
+- Deployments Types:
+  - ClusterIP: LoadBalancer within the cluster
+  - LoadBalancer (internal/external): Load Balancer outside the cluster
+  - NodePort: Not recommended
 
 ### Security
 
@@ -71,6 +75,7 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 - Set resource limits on PODs
   - k8s will deprevision PODs without resource limits first
+  - This is required for auto scaling
 
 ### Monitor
 
