@@ -21,6 +21,7 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 ### 12 Factor
 
+- https://www.ben-morris.com/building-twelve-factor-apps-with-net-core/
 - https://12factor.net/
 
 ### Resources
