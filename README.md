@@ -13,6 +13,18 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 ## AKS
 
+### Control Plane, Nodes, Pods and Objects
+
+- Control Plane, it is a managed services in Azure
+  - Can be deployed as public or private
+- Nodes are represented by nodepools of Azure VMs in a ScaleSet
+- Diagram: https://phoenixnap.com/kb/understanding-kubernetes-architecture-diagrams
+- Pods is the smallest unit of compute deployment in Kubernetes
+  - One pod can host many containers 
+  - Containers can communicate via localhost (side-car pattern)
+- Kubernetes objects are persistent entities in the Kubernetes system. Kubernetes uses these entities to represent the state of your cluster.
+  - pods, deployments, services, namespaces
+  
 ### Provisioning and deploymnet
 
 - Provision the cluster with the Azure CLI as it provides more configuration options
@@ -31,9 +43,12 @@ A guide to best practices for Docker, AKS, and other Azure Services
 
 ### Networking
 
+- Flat model. All pods can communicate with all pods on the cluster regardless of the namespace via FQDN.
+- More details: https://kubernetes.io/docs/concepts/cluster-administration/networking/
 - There are two networking options, kubenet and CNI
   - Kubenet does not provide inboud communication into the nodes and can work on top of an exsiting network
   - CNI: Recommended. Requires more network planning and IP allocation, and provides ability for inboud communication into the nodes
+  - More info: https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni
 - Use NGS to restrict communication from outside the cluster, use network policies to restrict communication inside the cluster
   - Note: namespaces do not provide service isolation
 - Deployments Types:
