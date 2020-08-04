@@ -2,33 +2,6 @@
 
 A guide to best practices for Docker, AKS, and other Azure Services
 
-## Microservices architecture
-
-### API Management pattern
-
-- https://docs.microsoft.com/en-us/dotnet/architecture/microservices/ (Page 42)
-
-### Async vs Sync patterns
-
-- https://docs.microsoft.com/en-us/dotnet/architecture/microservices/ (Page 53)
-
-### Resiliency
-
-- Implement Liveness and Readiness probes
-- Enable Cluster and App Monitoring
-- Transient Fault Handling (retries with exponential backoff and resilient HTTP requests)
-- https://docs.microsoft.com/en-us/dotnet/architecture/microservices/ (Page 280)
-
-### 12 Factor
-
-- https://www.ben-morris.com/building-twelve-factor-apps-with-net-core/
-- https://12factor.net/
-
-### Resources
-
-- https://docs.microsoft.com/en-us/dotnet/architecture/microservices/
-
-
 ## Docker
 
 ### Security
@@ -116,3 +89,28 @@ A guide to best practices for Docker, AKS, and other Azure Services
   - 12 Factor inject secrets as environment variables
   - Get secrets at runtime (more secure)
 
+## Microservices architecture
+
+### API Management pattern
+
+- https://docs.microsoft.com/en-us/dotnet/architecture/microservices/ (Page 42)
+
+### Async vs Sync patterns
+
+- https://docs.microsoft.com/en-us/dotnet/architecture/microservices/ (Page 53)
+
+### Resiliency
+
+- Implement Liveness and Readiness probes
+- Enable Cluster and App Monitoring
+- Transient Fault Handling (retries with exponential backoff and resilient HTTP requests)
+- https://docs.microsoft.com/en-us/dotnet/architecture/microservices/ (Page 280)
+
+### 12 Factor
+
+- https://www.ben-morris.com/building-twelve-factor-apps-with-net-core/
+- https://12factor.net/
+
+### Resources
+
+- https://docs.microsoft.com/en-us/dotnet/architecture/microservices/
