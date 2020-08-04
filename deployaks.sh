@@ -1,5 +1,9 @@
 #!/bin/bash
 
+###
+### Important: Make sure you have installed Azure CLI 2.X
+###
+
 RESOURCE_GROUP_NAME=gbm-demo-rg
 VNET_NAME=gmbdemovnet
 VNET_SUBNET_NAME=akssubnet
