@@ -16,6 +16,7 @@ az group create --name $RESOURCE_GROUP_NAME --location $LOCATION
 echo "Creating the ACR: $ACR_NAME"
 az acr create -n $ACR_NAME -g $RESOURCE_GROUP_NAME --sku basic
 
+# Import an image from Dockerhub to ACR (to have something to work with)
 echo "Importing image docker.io/library/nginx:latest fron docker hub"
 az acr import  -n $ACR_NAME --source docker.io/library/nginx:latest --image nginx:v1
 
@@ -28,7 +29,7 @@ az network vnet create \
     --subnet-name $VNET_SUBNET_NAME \
     --subnet-prefix 192.168.0.0/23
 
-# Create a service principal and read in the application ID
+# Create a service principal and read in the application ID and password
 echo "Creating the service principal"
 SP=$(az ad sp create-for-rbac --output json)
 SP_ID=$(echo $SP | jq -r .appId)
@@ -49,7 +50,7 @@ az role assignment create --assignee $SP_ID --scope $VNET_ID --role Contributor
 echo "Getting the VNET ID"
 SUBNET_ID=$(az network vnet subnet show --resource-group $RESOURCE_GROUP_NAME --vnet-name $VNET_NAME --name $VNET_SUBNET_NAME --query id -o tsv)
 
-echo "Creatihg the AKS cluster: $CLUSTER_NAME"
+echo "Creatihg the AKS cluster: ${CLUSTER_NAME}"
 az aks create \
     --resource-group $RESOURCE_GROUP_NAME \
     --name $CLUSTER_NAME \
@@ -66,4 +67,4 @@ az aks create \
     --network-policy azure
 
 echo "Remeber to get the credentials"
-echo "Run: az aks get-credentials --resource-group $RESOURCE_GROUP_NAME --name $CLUSTER_NAME"
+echo "Run: az aks get-credentials --resource-group ${RESOURCE_GROUP_NAME} --name ${CLUSTER_NAME}"
