@@ -1,4 +1,4 @@
-# Microservices, Docker, AKS, and Other Azure Services
+# AKS Guide
 
 A guide to best practices for Docker, AKS, and other Azure Services
 
