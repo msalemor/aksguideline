@@ -25,7 +25,7 @@ A guide to best practices for Docker, AKS, and other Azure Services
 - Kubernetes objects are persistent entities in the Kubernetes system. Kubernetes uses these entities to represent the state of your cluster.
   - pods, deployments, services, namespaces
   
-### Provisioning and deploymnet
+### Provisioning and deployment
 
 - Provision the cluster with the Azure CLI as it provides more configuration options
 - Enable autoscaling of nodes
