@@ -104,6 +104,12 @@ A guide to best practices for Docker, AKS, and other Azure Services
   - 12 Factor inject secrets as environment variables
   - Get secrets at runtime (more secure)
 
+### Demos
+
+- https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration
+- https://docs.microsoft.com/en-us/azure/aks/use-network-policies
+- https://github.com/dapr/samples/tree/master/2.hello-kubernetes
+
 ## Microservices architecture
 
 ### API Management pattern
