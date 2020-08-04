@@ -23,9 +23,9 @@ az acr import  -n $ACR_NAME --source docker.io/library/nginx:latest --image ngin
 echo "Creating the vnet and subnet"
 az network vnet create \
     --resource-group $RESOURCE_GROUP_NAME \
-    --name gbmvnet \
+    --name $VNET_NAME \
     --address-prefixes 192.168.0.0/22 \
-    --subnet-name akssubnet \
+    --subnet-name $VNET_SUBNET_NAME \
     --subnet-prefix 192.168.0.0/23
 
 # Create a service principal and read in the application ID
@@ -40,14 +40,14 @@ sleep 15
 
 # Get the virtual network resource ID
 echo "Getting the VNET ID"
-VNET_ID=$(az network vnet show --resource-group $RESOURCE_GROUP_NAME --name gbmvnet --query id -o tsv)
+VNET_ID=$(az network vnet show --resource-group $RESOURCE_GROUP_NAME --name $VNET_NAME --query id -o tsv)
 
 # Assign the service principal Contributor permissions to the virtual network resource
 az role assignment create --assignee $SP_ID --scope $VNET_ID --role Contributor
 
 # Get the virtual network subnet resource ID
 echo "Getting the VNET ID"
-SUBNET_ID=$(az network vnet subnet show --resource-group $RESOURCE_GROUP_NAME --vnet-name gbmvnet --name akssubnet --query id -o tsv)
+SUBNET_ID=$(az network vnet subnet show --resource-group $RESOURCE_GROUP_NAME --vnet-name $VNET_NAME --name $VNET_SUBNET_NAME --query id -o tsv)
 
 echo "Creatihg the AKS cluster: $CLUSTER_NAME"
 az aks create \
