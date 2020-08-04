@@ -9,7 +9,7 @@ ACR_NAME=gbmdemoacr
 
 
 # Create a resource group
-echo "Creating the Resource group $RESOURCE_GROUP_NAME at $LOCATION"
+echo "Creating the Resource group ${RESOURCE_GROUP_NAME} at ${LOCATION}"
 az group create --name $RESOURCE_GROUP_NAME --location $LOCATION
 
 # Creating the ACR
